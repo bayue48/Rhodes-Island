@@ -24,7 +24,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "48yunyun@gmail.com"
+          git config --local user.email "rich.bayue@gmail.com"
           git config --local user.name "bayue48"
           git add -A
 
