@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: permission issue
-        run: |
-          P=/home/root/build
-          mkdir -p $P && cp -r . $P && cd $P
-          git config --global --add safe.directory $P
+        run: sudo git config --global --add safe.directory /github/workspace
+
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -29,9 +27,9 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "rich.bayue@gmail.com"
-          git config --local user.name "Bayu Erich"
-          git add -A
+          sudo git config --local user.email "rich.bayue@gmail.com"
+          sudo git config --local user.name "Bayu Erich"
+          sudo git add -A
 
           arr[0]="[Recruit]: 🔥 Caster Operator"
           arr[1]="[Recruit]: ⚔️ Guard Operator"
