@@ -12,6 +12,11 @@ jobs:
   auto_commit:
     runs-on: ubuntu-latest
     steps:
+      - name: permission issue
+        run: |
+          P=/home/root/build
+          mkdir -p $P && cp -r . $P && cd $P
+          git config --global --add safe.directory $P
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
@@ -24,9 +29,6 @@ jobs:
 
       - name: Commit changes
         run: |
-          P=/home/root/build
-          mkdir -p $P && cp -r . $P && cd $P
-          git config --global --add safe.directory $P
           git config --local user.email "rich.bayue@gmail.com"
           git config --local user.name "Bayu Erich"
           git add -A
