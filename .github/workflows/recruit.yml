@@ -24,9 +24,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global --add safe.directory /github/workspace
           git config --local user.email "rich.bayue@gmail.com"
-          git config --local user.name "bayue48"
+          git config --local user.name "Bayu Erich"
           git add -A
 
           arr[0]="[Recruit]: 🔥 Caster Operator"
